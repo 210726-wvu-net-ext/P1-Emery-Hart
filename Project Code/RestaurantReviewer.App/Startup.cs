@@ -17,6 +17,7 @@ namespace RestaurantReviewer.App
         {
             Configuration = configuration;
         }
+    
 
         public IConfiguration Configuration { get; }
 
