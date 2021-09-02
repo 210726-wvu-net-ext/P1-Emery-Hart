@@ -8,11 +8,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RestaurantReviewer.DataAccess;
+using RestaurantReviewer.DataAccess.Entities;
+using RestaurantReviewer.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace RestaurantReviewer.App
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +29,13 @@ namespace RestaurantReviewer.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IRepository, Repository>();
+
+            services.AddDbContext<PojectzeroContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("projDB"));
+                options.LogTo(Console.WriteLine); // Change this later
+            });
             services.AddControllersWithViews();
         }
 
