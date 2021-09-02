@@ -1,0 +1,44 @@
+﻿@model IEnumerable<RestaurantReviewer.Domain.Review>
+
+@{
+    ViewData["Title"] = "Reviews";
+    string name = ViewBag.name;
+}
+
+<h4>Reviews for: @Html.Display(name)</h4>
+
+<div>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Author ID#
+                </th>
+                <th>
+                    Rating (1-10)
+                </th>
+                <th>
+                    Thoughts/Comments
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rev in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => rev.UID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => rev.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => rev.Thoughts)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("Go Back", "Index")
+</div>

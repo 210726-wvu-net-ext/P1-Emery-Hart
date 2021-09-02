@@ -1,0 +1,28 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Project Code/RestaurantReviewer.App/.vs/RestaurantReviewer.App/v16
+/Project Code/RestaurantReviewer.App/.vs/RestaurantReviewerApp
+/Project Code/RestaurantReviewer.DataAccess/obj/Debug/net5.0
+/Project Code/RestaurantReviewer.DataAccess/obj/RestaurantReviewer.DataAccess.csproj.nuget.g.targets
+/Project Code/RestaurantReviewer.DataAccess/obj/RestaurantReviewer.DataAccess.csproj.nuget.g.props
+/Project Code/RestaurantReviewer.DataAccess/obj/RestaurantReviewer.DataAccess.csproj.nuget.dgspec.json
+/Project Code/RestaurantReviewer.DataAccess/obj/project.nuget.cache
+/Project Code/RestaurantReviewer.DataAccess/obj/project.assets.json
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/RestaurantReviewer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/RestaurantReviewer.Domain.csproj.AssemblyReference.cache
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/RestaurantReviewer.Domain.assets.cache
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/RestaurantReviewer.Domain.AssemblyInfoInputs.cache
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/RestaurantReviewer.Domain.AssemblyInfo.cs
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+/Project Code/RestaurantReviewer.Domain/obj/RestaurantReviewer.Domain.csproj.nuget.g.targets
+/Project Code/RestaurantReviewer.Domain/obj/RestaurantReviewer.Domain.csproj.nuget.g.props
+/Project Code/RestaurantReviewer.Domain/obj/RestaurantReviewer.Domain.csproj.nuget.dgspec.json
+/Project Code/RestaurantReviewer.Domain/obj/project.nuget.cache
+/Project Code/RestaurantReviewer.Domain/obj/project.assets.json
+/Project Code/RestaurantReviewer.DataAccess/bin/Debug/net5.0
+/Project Code/RestaurantReviewer.Domain/bin/Debug/net5.0
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0/ref
+/Project Code/RestaurantReviewer.Domain/obj/Debug/net5.0
+/Project Code/RestaurantReviewer.DataAccess/obj
