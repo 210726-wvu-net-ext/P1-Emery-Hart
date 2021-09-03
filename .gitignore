@@ -30,3 +30,5 @@
 /.vs
 /Project Code/.vs/RestaurantReviewerApp
 /Project Code/.vscode
+/Project Code/RestaurantReviewer.Test/obj
+/Project Code/RestaurantReviewer.Test/bin/Debug/net5.0
