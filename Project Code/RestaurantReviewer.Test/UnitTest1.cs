@@ -1,15 +1,15 @@
 using System;
 using Xunit;
 using Microsoft.EntityFrameworkCore;
-using DL;
+using 
 
 namespace Test
 {
     public class UnitTest1
     {
-        private readonly DbContextOptions<Entity.reviewdbContext> options;
+        private readonly DbContextOptions<> options;
 
-        public TestRepo()
+        public void TestRepo()
         {
             options = new DbContextOptionsBuilder<Entity.reviewdbContext>().UseSqlite("Filename=test.db").Options;
             Seed();
