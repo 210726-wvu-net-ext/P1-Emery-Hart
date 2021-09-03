@@ -28,3 +28,5 @@
 /Project Code/RestaurantReviewer.DataAccess/obj
 /Project Code/RestaurantReviewer.Domain/obj/Release/net5.0
 /.vs
+/Project Code/.vs/RestaurantReviewerApp
+/Project Code/.vscode
