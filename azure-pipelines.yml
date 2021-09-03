@@ -1,3 +1,4 @@
+#Builds and tests in release config
 trigger:
   branches:
     include:
@@ -11,10 +12,10 @@ pr:
 pool:
   vmImage: ubuntu-latest
 
-variables:
+variables: #Path to folder with .sln
   solution: Project Code
 
-stages:
+stages: 
 - stage: build
   jobs:
   - job: build
