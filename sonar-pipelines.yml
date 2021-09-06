@@ -6,8 +6,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solutionPath: 'Project Code\*.sln'
-  solutionDir: 'Project Code'
+  solution: 'Project Code\RestaurantReviewerApp.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -16,7 +15,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solutionPath)'
+    restoreSolution: '$(solution)'
 
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis configuration'
@@ -31,7 +30,7 @@ steps:
 - task: VSBuild@1
   displayName: 'Build solution'
   inputs:
-    solution: '$(soluitonDir)'
+    solution: '$(soluiton)'
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
 
