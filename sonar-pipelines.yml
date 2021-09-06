@@ -20,7 +20,7 @@ steps:
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis configuration'
   inputs:
-    SonarCloud: 'SC'
+    SonarCloud: 'P1 Scanner'
     organization: '210726-wvu-net-ext'
     scannerMode: 'MSBuild'
     projectKey: '210726-wvu-net-ext_P1-Emery-Hart'
