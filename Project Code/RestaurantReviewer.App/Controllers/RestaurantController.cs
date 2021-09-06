@@ -24,9 +24,9 @@ namespace RestaurantReviewer.App.Controllers
         // Displays a list of all currently tracked locations
         public ActionResult Index()
         {
-            return View(_repo.GetAllResturaunts());
             Log.Information("Fetched Resturants list view");
-            
+            return View(_repo.GetAllResturaunts());
+
         }
 
         // GET: RestaurantController/Reviews/
