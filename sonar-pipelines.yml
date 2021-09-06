@@ -15,7 +15,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    restoreSolution: '$(solution)/*.sln'
 
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis configuration'
