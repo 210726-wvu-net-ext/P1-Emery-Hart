@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewer.App", "RestaurantReviewer.App\RestaurantReviewer.App.csproj", "{C678865B-EF8D-4F3B-B0D1-7897295E4537}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReviewer.App", "RestaurantReviewer.App\RestaurantReviewer.App.csproj", "{C678865B-EF8D-4F3B-B0D1-7897295E4537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewer.Domain", "RestaurantReviewer.Domain\RestaurantReviewer.Domain.csproj", "{A78B92A4-FB2D-4DCB-A799-FB05920154AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReviewer.Domain", "RestaurantReviewer.Domain\RestaurantReviewer.Domain.csproj", "{A78B92A4-FB2D-4DCB-A799-FB05920154AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantReviewer.DataAccess", "RestaurantReviewer.DataAccess\RestaurantReviewer.DataAccess.csproj", "{2061D2F4-AB26-46DE-813C-CC4634C653BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReviewer.DataAccess", "RestaurantReviewer.DataAccess\RestaurantReviewer.DataAccess.csproj", "{2061D2F4-AB26-46DE-813C-CC4634C653BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
