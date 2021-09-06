@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace RestaurantReviewer.App.Controllers
         public ActionResult Index()
         {
             return View(_repo.GetAllResturaunts());
+            Log.Information("Fetched Resturants list view");
+            
         }
 
         // GET: RestaurantController/Reviews/
@@ -32,7 +35,9 @@ namespace RestaurantReviewer.App.Controllers
         public ActionResult Reviews(int id)
         {
             List<Review> queryList = _repo.GetReviews(id);
+            Log.Information($"Got reviews for RestID# {id}");
             return View(queryList);
+            
         }
 
         // GET: RestaurantController/Create
