@@ -6,7 +6,8 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: 'Project Code\*.sln'
+  solutionPath: 'Project Code\*.sln'
+  solutionDir: 'Project Code'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -15,7 +16,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    restoreSolution: '$(solutionPath)'
 
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis configuration'
@@ -30,7 +31,7 @@ steps:
 - task: VSBuild@1
   displayName: 'Build solution'
   inputs:
-    solution: '$(soluiton)'
+    solution: '$(soluitonDir)'
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
 
