@@ -4,13 +4,13 @@
     ViewData["Title"] = "Index";
 }
 <h3>Search for a Restaurant</h3>
-<form id="SingleSearch" asp-controller="RestaurantController" asp-action="SingleSearch">
+<form id="SingleSearch" asp-controller="Restaurant" asp-action="SingleSearch">
     <p>
         By Name or ID#: <input type ="text" name="input" />
         <input type="submit" value="Search" />
     </p>
 </form>
-<form id="ListSearch" asp-controller="RestaurantController" asp-action="ListSearch">
+<form id="ListSearch" asp-controller="Restaurant" asp-action="ListSearch">
     <p>
         By Zip or Style: <input type="text" name="input" />
         <input type="submit" value="Search" />
