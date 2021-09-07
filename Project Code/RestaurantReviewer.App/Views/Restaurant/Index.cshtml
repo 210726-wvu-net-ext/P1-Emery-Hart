@@ -3,8 +3,20 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h4>Restaurants in our network:</h4>
+<h3>Search for a Restaurant</h3>
+<form id="SingleSearch" asp-controller="RestaurantController" asp-action="SingleSearch">
+    <p>
+        By Name or ID#: <input type ="text" name="input" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<form id="ListSearch" asp-controller="RestaurantController" asp-action="ListSearch">
+    <p>
+        By Zip or Style: <input type="text" name="input" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<h3>All Restaurants in our network:</h3>
 <div>
     <hr />
     <table class="table">
