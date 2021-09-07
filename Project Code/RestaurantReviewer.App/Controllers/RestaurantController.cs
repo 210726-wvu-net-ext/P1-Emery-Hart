@@ -64,7 +64,12 @@ namespace RestaurantReviewer.App.Controllers
                 foundRest = null;
                 Log.Debug("SS - Bad input, or type mismatch");
             }
-            return View("SearchResults", foundRest);
+            // Parse into list anyway for data type reasons
+            List<Restaurant> foundRestL = new List<Restaurant>()
+            {
+                foundRest
+            };
+            return View("SearchResults", foundRestL);
         }
 
         [HttpPost]
