@@ -29,13 +29,12 @@ namespace RestaurantReviewer.App.Controllers
 
         }
 
-        // GET: RestaurantController/Reviews/
-        // Returns reviews for a restaurant
+        //Returns reviews of a selected restaurant
         public ActionResult Reviews(int id)
         {
             List<Review> queryList = _repo.GetReviews(id);
             Log.Information($"Got reviews for RestID# {id}");
-            return View(queryList);
+            return View("Reviews", queryList);
             
         }
 
@@ -44,7 +43,7 @@ namespace RestaurantReviewer.App.Controllers
         /// </summary>
         /// <param name="input">generic input</param>
         /// <returns>A single restaurant object</returns>
-
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SingleSearch(string input)
         {
@@ -65,16 +64,16 @@ namespace RestaurantReviewer.App.Controllers
                 foundRest = null;
                 Log.Debug("SS - Bad input, or type mismatch");
             }
-            return View(foundRest);
+            return View("SearchResults", foundRest);
         }
 
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ListSearch(string input)
         {
             List<Restaurant> foundList = new List<Restaurant>();
-            int goodIn;
 
-            if (int.TryParse(input, out goodIn))
+            if (int.TryParse(input, out int goodIn))
             {
                 //Search here
                 foundList = _repo.SearchRestaurantList(goodIn);
@@ -91,7 +90,7 @@ namespace RestaurantReviewer.App.Controllers
                 foundList = null;
                 Log.Debug("LS - Bad input, or type mismatch");
             }
-            return View(foundList);
+            return View("SearchResults", foundList);
         }
 
         // GET: RestaurantController/Create
