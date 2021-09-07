@@ -31,13 +31,67 @@ namespace RestaurantReviewer.App.Controllers
 
         // GET: RestaurantController/Reviews/
         // Returns reviews for a restaurant
-        
         public ActionResult Reviews(int id)
         {
             List<Review> queryList = _repo.GetReviews(id);
             Log.Information($"Got reviews for RestID# {id}");
             return View(queryList);
             
+        }
+
+        /// <summary>
+        /// Search By ID or Name
+        /// </summary>
+        /// <param name="input">generic input</param>
+        /// <returns>A single restaurant object</returns>
+
+        [ValidateAntiForgeryToken]
+        public ActionResult SingleSearch(string input)
+        {
+            int goodIn;
+            Restaurant foundRest;
+            if (int.TryParse(input, out goodIn))
+            {
+                foundRest = _repo.SearchRestaurants(goodIn);
+                Log.Information("SS - Found by ID");
+            }
+            else if (input != null)
+            {
+                foundRest = _repo.SearchRestaurants(input);
+                Log.Information("SS - Found by name");
+            }
+            else
+            {
+                foundRest = null;
+                Log.Debug("SS - Bad input, or type mismatch");
+            }
+            return View(foundRest);
+        }
+
+
+        public ActionResult ListSearch(string input)
+        {
+            List<Restaurant> foundList = new List<Restaurant>();
+            int goodIn;
+
+            if (int.TryParse(input, out goodIn))
+            {
+                //Search here
+                foundList = _repo.SearchRestaurantList(goodIn);
+                Log.Information("LS - Found list by zip");
+            }
+            else if (input != null)
+            {
+                //Search here
+                foundList = _repo.SearchRestaurantList(input);
+                Log.Information("LS - Found list by style");
+            }
+            else
+            {
+                foundList = null;
+                Log.Debug("LS - Bad input, or type mismatch");
+            }
+            return View(foundList);
         }
 
         // GET: RestaurantController/Create
