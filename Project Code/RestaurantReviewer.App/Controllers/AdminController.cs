@@ -18,8 +18,10 @@ namespace RestaurantReviewer.App.Controllers
         }
         public IActionResult Index()
         {
-            Log.Information("Admin mode enabled");
+            Log.Information("Admin mode enabled, userlist fetched");
             return View(_repo.GetUsers());
         }
+
+        // Add user goes here
     }
 }
