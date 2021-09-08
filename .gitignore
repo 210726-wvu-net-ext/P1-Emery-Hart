@@ -34,3 +34,6 @@
 /Project Code/RestaurantReviewer.Test/bin/Debug/net5.0
 /Project Code/.sonarqube
 /Project Code/logs
+/Project Code/RestaurantReviewer.DataAccess/bin/Release/net5.0
+/Project Code/RestaurantReviewer.Domain/bin/Release/net5.0
+/Project Code/RestaurantReviewer.Test/bin/Release/net5.0

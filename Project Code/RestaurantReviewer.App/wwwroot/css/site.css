@@ -18,7 +18,7 @@ a {
   border-color: #1861ac;
 }
 
-a #danger {
+nav-link #danger {
     color: red;
 }
 
@@ -68,7 +68,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: burlywood;
+  background-color: lightgoldenrodyellow;
 }
 
 h3 {
