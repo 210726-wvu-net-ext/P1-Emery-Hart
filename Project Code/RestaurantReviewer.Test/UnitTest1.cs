@@ -1,65 +1,63 @@
 using System;
 using Xunit;
 using Microsoft.EntityFrameworkCore;
-using 
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using RestaurantReviewer.DataAccess.Entities;
+using RestaurantReviewer.Domain;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Test
 {
     public class UnitTest1
     {
-        private readonly DbContextOptions<> options;
+        private readonly DbContextOptions options = new DbContextOptionsBuilder<RestaurantReviewer.DataAccess.Entities.PojectzeroContext>().UseSqlite("Filename=test.db").Options;
 
-        public void TestRepo()
-        {
-            options = new DbContextOptionsBuilder<Entity.reviewdbContext>().UseSqlite("Filename=test.db").Options;
-            Seed();
-        }
+        //[Fact]
+        //public void TestRepo()
+        //{
+        //    Seed();
+        //}
         [Fact]
         public void AddAUserShouldAddAUser()
         {
-           //Arrange
-           using(var testcontext = new Entity.reviewdbContext(options))
-           {
-               IReviewRepo _repo = new ReviewRepo(testcontext);
+            //Arrange
+            var tesUser = new RestaurantReviewer.Domain.User {
+                Id = 10,
+                Name = "Bob Smith",
+                AccessLvl = 1
 
-               //Act
-               _repo.AddUser(
-                   new Models.User{
-                        Id = 5,
-                        Name = "Bob Smith",
-                        AcessLvl = 1
+            };
 
-                    }
-               );
-           } 
+            //Act
+            var validated = new List<ValidationResult>();
+            var result = Validator.TryValidateObject(tesUser, new ValidationContext(tesUser), validated, true);
+            //Assert
 
-           //Assert
-           using(var assertContext = new Entity.reviewdbContext(options))
-           {
-               Entity.User user = assertContext.users.FirstOrDefault();
-           }
-
+            Assert.True(result, "Expected to pass");
         }
 
-        private void Seed()
-        {
-            using(var context = new Entity.reviewdbContext(options))
-            {
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated(); // wipe the tables
 
-                context.Users.AddRange(
-                    new Models.User{
-                        Id = 1,
-                        Name = "Frank Stevens",
-                        AcessLvl = 1
+        //private void Seed()
+        //{
+        //    using(var context = new Entity.reviewdbContext(options))
+        //    {
+        //        context.Database.EnsureDeleted();
+        //        context.Database.EnsureCreated(); // wipe the tables
 
-                    }
-                );
-            }
+        //        context.Users.AddRange(
+        //            new Models.User{
+        //                Id = 1,
+        //                Name = "Frank Stevens",
+        //                AcessLvl = 1
 
-            context.SaveChanges; //Does the actual commit
-        }
+        //            }
+        //        );
+        //    }
+
+        //    context.SaveChanges(); //Does the actual commit
+        //}
 
         //Given
         //When

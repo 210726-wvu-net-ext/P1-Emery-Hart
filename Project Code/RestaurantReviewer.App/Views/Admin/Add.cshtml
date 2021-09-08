@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Add a new user";
+}
+
+<h3>Adding a new user</h3>
+<p>Please enter the new users details:</p>
+<form id="NUser" asp-controller="Admin" asp-action="AddUser">
+    <p>
+        Enter UserName: <input type="text" required name="uName" />
+        Enter a Temp Password: <input type="password" required name="uPass" />
+        Check to make a new Admin user: <input type="checkbox" name="accessLvl" value="2" />
+        <input type="submit" value="Create" />
+        <input type="reset" />
+    </p>
+</form>
