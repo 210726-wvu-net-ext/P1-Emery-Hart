@@ -1,4 +1,10 @@
 #Builds and tests in release config
+- task: UseDotNet@2
+  displayName: Dotnet SDK 5
+  inputs:
+    packageType: 'sdk'
+    version: '5.x'
+
 trigger:
   branches:
     include:
@@ -21,7 +27,12 @@ stages:
   - job: build
     
     steps:
-
+    - task: UseDotNet@2
+      displayName: Dotnet SDK 5
+      inputs:
+        packageType: 'sdk'
+        version: '5.x
+    
     - script: dotnet build --configuration Release
       displayName: dotnet build
       workingDirectory: $(solution)
