@@ -14,7 +14,7 @@ namespace RestaurantReviewer.DataAccess
         //Establish pathing
         private readonly PojectzeroContext _context;
 
-        public Repository (PojectzeroContext context)
+        public Repository(PojectzeroContext context)
         {
             _context = context;
         }
@@ -135,6 +135,28 @@ namespace RestaurantReviewer.DataAccess
                 }
             }
             return foundList;
+        }
+
+        /// <summary>
+        /// Adds a new user 
+        /// This function is locked behind admin level and not viewable or accessable by normal users
+        /// </summary>
+        /// <param name="nUser">The user object to parse</param>
+        /// <returns></returns>
+        public Domain.User AddUser(Domain.User nUser)
+        {
+            _context.Users.Add(
+                new Entities.User
+                {
+                    UserId = nUser.Id,
+                    Uname = nUser.Name,
+                    Upass = nUser.Pass,
+                    AccessLvl = nUser.AccessLvl
+                }
+            );
+            _context.SaveChanges();
+
+            return nUser;
         }
     }
 }

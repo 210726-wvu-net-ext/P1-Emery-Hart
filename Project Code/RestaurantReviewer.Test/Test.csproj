@@ -7,7 +7,8 @@
   </PropertyGroup>
 	
 	<ItemGroup>
-		<ProjectReference Include="RestaurantReviewer.Domain\RestaurantReviewer.DataAccess.csproj" />
+		<ProjectReference Include="..\RestaurantReviewer.DataAccess\RestaurantReviewer.DataAccess.csproj" />
+		<ProjectReference Include="..\RestaurantReviewer.Domain\RestaurantReviewer.Domain.csproj" />
 	</ItemGroup>
 
   <ItemGroup>

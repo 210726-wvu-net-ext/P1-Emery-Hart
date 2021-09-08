@@ -24,6 +24,6 @@ namespace RestaurantReviewer.Domain
 
         //Review AddReview(Review nReview);
 
-        //User AddUser(User nUser);
+        User AddUser(User nUser);
     }
 }
