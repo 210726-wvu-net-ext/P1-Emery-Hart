@@ -25,6 +25,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: '210726-wvu-net-ext_P1-Emery-Hart'
     projectName: 'P1-Emery-Hart'
+    extraProperties: 'sonar.exclusions=**/lib/**/*'
 
 
 - task: VSBuild@1
